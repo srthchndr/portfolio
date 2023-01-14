@@ -53,6 +53,15 @@
         ]
       }
     ],
+    "import/extensions": [
+      "error",
+      {
+        ".ts": "never",
+        ".js": "never",
+        ".tsx": "never",
+        ".jsx": "never"
+      }
+    ],
     "import/order": [
       "error",
       {
@@ -340,6 +349,8 @@
       "error",
       {
         "extensions": [
+          ".js",
+          ".jsx",
           ".ts",
           ".tsx"
         ]
