@@ -10,9 +10,6 @@ export default function Home() {
             <IntroComponent />
             <ProjectsComponent />
             <FooterComponent />
-            {/* <main className={styles.main} />
-
-            <footer className={styles.footer} /> */}
         </div>
     );
 }

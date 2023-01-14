@@ -1,11 +1,17 @@
 /** @type {import('tailwindcss').Config} */
+const plugin = require('tailwindcss/plugin');
+
 module.exports = {
     content: [
         './pages/**/*.{js,ts,jsx,tsx}',
         './app/**/*.{js,ts,jsx,tsx}',
         './components/**/*.{js,ts,jsx,tsx}'
     ],
-    plugins: [],
+    plugins: [
+        plugin(({
+            addComponents, addUtilities, config, e
+        }) => {})
+    ],
     theme: {
         colors: {
             black: {
@@ -41,7 +47,7 @@ module.exports = {
                 primary: '#05cb8e',
                 secondary: '#05b47e',
                 light: '#e6fcf5',
-                dark: '#011610'
+                dark: '#02432f'
             },
             neonyellow: {
                 default: '#F8Ce27',

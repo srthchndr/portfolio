@@ -19,7 +19,10 @@ export default {
     {
         name: 'image',
         type: 'image',
-        title: 'Project Picture'
+        title: 'Project Picture',
+        options: {
+          hotspot: true
+        }
     },
     {
         name: 'summary',
@@ -41,8 +44,7 @@ export default {
         type: 'object',
         fields: [
           {name: 'github', type: 'object', title: 'Github URL', fields: [
-            {name: 'link', type: 'url', title: 'Link'},
-            {name: 'logo', type: 'image', title: 'Logo'}
+            {name: 'link', type: 'url', title: 'Link'}
           ]},
           {name: 'live', type: 'object', title: 'Live Web URL', fields: [
             {name: 'link', type: 'url', title: 'Link'},

@@ -4,7 +4,7 @@ import {
 } from '@next/font/google';
 import React from 'react';
 
-import NavbarComponent from './navbar.tsx';
+import NavbarComponent from '../components/NavbarComponent';
 
 // If loading a variable font, you don't need to specify the font weight
 const inter = Quicksand();
@@ -24,7 +24,7 @@ export default function RootLayout({
         head.tsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
       */}
             <head />
-            <body className={'bg-white-default dark:bg-black-default text-black-default dark:text-white-default p-5'}>
+            <body className={'scroll-smooth bg-white-default dark:bg-black-default text-black-default dark:text-white-default'}>
                 <NavbarComponent />
                 {children}
             </body>

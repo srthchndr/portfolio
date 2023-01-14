@@ -1,11 +1,15 @@
 // eslint-disable-next-line import/no-extraneous-dependencies
+import Link from 'next/link';
 import {
     use
 } from 'react';
 
 import {
-    sanityClient
+    sanityClient, urlFor
 } from '../sanity';
+import {
+    ProjectProps
+} from '../types';
 
 import CardWrapperComponent from '../components/CardWrapperComponent';
 import Project from '../components/ProjectComponent';
@@ -17,7 +21,8 @@ async function getProjects() {
           title,
           skills, 
           links, 
-          summary
+          summary,
+          image
       }`;
 
     const result = await sanityClient.fetch(query);
@@ -27,66 +32,33 @@ async function getProjects() {
 export default function ProjectsComponent() {
     const projects = use(getProjects());
     return (
-        <div>
+        <div
+            className={'space-y-4 mb-10 p-5'}
+        >
             {/* <CardWrapperComponent> */}
+            <h2
+                className={'text-3xl text-left dark:text-grey-primary mb-10'}
+                id={'projects'}
+            >My recent projects
+            </h2>
             {projects.map((project) => {
                 const {
-                    id, links, name, skills, summary, title
+                    id, image, links, name, skills, summary, title
                 } = project;
 
                 return (
                     <Project
-                        // githubURL={links.github.link}
+                        id={id}
+                        imageURL={image ? urlFor(image).width(217).height(232).url() : null}
                         key={id}
+                        links={links}
+                        name={name}
                         skills={skills}
                         summary={summary}
                         title={title}
                     />
                 );
             }) }
-            {/* <Project>
-                    <div className={'w-full bg-grey-darker h-3/4 rounded-lg'}>Image</div>
-                    <div className={'text-start space-y-1'}>
-                        <h3 className={''}>Title goes here</h3>
-                        <p className={'text-xs text-grey-darker'}>This is where description goes</p>
-                    </div>
-                </Project>
-                <Project>
-                    <div className={'w-full bg-grey-darker h-3/4 rounded-lg'}>Image</div>
-                    <div className={'text-start space-y-1'}>
-                        <h3 className={''}>Title goes here</h3>
-                        <p className={'text-xs text-grey-darker'}>This is where description goes</p>
-                    </div>
-                </Project>
-                <Project>
-                    <div className={'w-full bg-grey-darker h-3/4 rounded-lg'}>Image</div>
-                    <div className={'text-start space-y-1'}>
-                        <h3 className={''}>Title goes here</h3>
-                        <p className={'text-xs text-grey-darker'}>This is where description goes</p>
-                    </div>
-                </Project>
-                <Project>
-                    <div className={'w-full bg-grey-darker h-3/4 rounded-lg'}>Image</div>
-                    <div className={'text-start space-y-1'}>
-                        <h3 className={''}>Title goes here</h3>
-                        <p className={'text-xs text-grey-darker'}>This is where description goes</p>
-                    </div>
-                </Project>
-                <Project>
-                    <div className={'w-full bg-grey-darker h-3/4 rounded-lg'}>Image</div>
-                    <div className={'text-start space-y-1'}>
-                        <h3 className={''}>Title goes here</h3>
-                        <p className={'text-xs text-grey-darker'}>This is where description goes</p>
-                    </div>
-                </Project>
-                <Project>
-                    <div className={'w-full bg-grey-darker h-3/4 rounded-lg'}>Image</div>
-                    <div className={'text-start space-y-1'}>
-                        <h3 className={''}>Title goes here</h3>
-                        <p className={'text-xs text-grey-darker'}>This is where description goes</p>
-                    </div>
-                </Project> */}
-            {/* </CardWrapperComponent> */}
         </div>
     );
 }
