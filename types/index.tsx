@@ -10,7 +10,7 @@ export interface LinkAndLogo {
 export interface ProjectProps {
     id: string,
     image?: Object
-    imageURL?: string,
+    imageURL?: string | null,
     name: string,
     title: string,
     summary: string,

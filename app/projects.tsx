@@ -1,5 +1,3 @@
-// eslint-disable-next-line import/no-extraneous-dependencies
-import Link from 'next/link';
 import {
     use
 } from 'react';
@@ -11,7 +9,6 @@ import {
     ProjectProps
 } from '../types';
 
-import CardWrapperComponent from '../components/CardWrapperComponent';
 import Project from '../components/ProjectComponent';
 
 async function getProjects() {
@@ -41,7 +38,7 @@ export default function ProjectsComponent() {
                 id={'projects'}
             >My recent projects
             </h2>
-            {projects.map((project) => {
+            {projects.map((project: ProjectProps) => {
                 const {
                     id, image, links, name, skills, summary, title
                 } = project;
