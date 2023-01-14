@@ -13,17 +13,20 @@ import ButtonComponent from '../ButtonComponent';
 export default function NavbarComponent() {
     let lastScrollTop = 0;
     const navRef = useRef < HTMLElement >(null);
-    window.addEventListener('scroll', () => {
-        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-        if (navRef.current) {
-            if (scrollTop > lastScrollTop) {
-                navRef.current.style.top = '-80px';
-            } else {
-                navRef.current.style.top = '0';
+
+    if (typeof window !== 'undefined') {
+        window.addEventListener('scroll', () => {
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            if (navRef.current) {
+                if (scrollTop > lastScrollTop) {
+                    navRef.current.style.top = '-80px';
+                } else {
+                    navRef.current.style.top = '0';
+                }
             }
-        }
-        lastScrollTop = scrollTop;
-    });
+            lastScrollTop = scrollTop;
+        });
+    }
     return (
         <nav
             className={'flex duration-500 items-center space-x-2 sticky top-0 bg-white-default dark:bg-black-default z-10 p-5'}
