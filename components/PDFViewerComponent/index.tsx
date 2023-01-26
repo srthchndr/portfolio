@@ -28,7 +28,7 @@ export default function PDFViewerComponent() {
         >
             <embed
                 className={'w-full h-full md:w-[600px] md:h-[550px]'}
-                src={`${pdf.url}#toolbar=0&view=fitH`}
+                src={'https://drive.google.com/file/d/1gUYd0pvSpCsrrPpsp6CC6ZsKQm-18jSh/view?usp=sharing#toolbar=0&view=fitH'}
                 type={'application/pdf'}
             />
         </object>
