@@ -1,22 +1,20 @@
-import React, {
-    use
-} from 'react';
+import React from 'react';
 
-import {
-    sanityClient
-} from '../../sanity';
+// import {
+//     sanityClient
+// } from '../../sanity';
 
-async function getPdfUrl() {
-    const query = `*[_type=='pdf'] {
-        'url': pdf.asset->url
-      }[0]`;
+// async function getPdfUrl() {
+//     const query = `*[_type=='pdf'] {
+//         'url': pdf.asset->url
+//       }[0]`;
 
-    const result = await sanityClient.fetch(query);
-    return result;
-}
+//     const result = await sanityClient.fetch(query);
+//     return result;
+// }
 
 export default function PDFViewerComponent() {
-    const pdf = use(getPdfUrl());
+    // const pdf = use(getPdfUrl());
 
     return (
         <embed
