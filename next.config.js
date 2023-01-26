@@ -9,13 +9,23 @@ const nextConfig = {
         ]
     },
     webpack(config) {
-        config.module.rules.push({
-            issuer: /\.[jt]sx?$/,
-            test: /\.svg$/i,
-            use: [
-                '@svgr/webpack'
-            ]
-        });
+        config.module.rules.push(
+            {
+                issuer: /\.[jt]sx?$/,
+                test: /\.svg$/i,
+                use: [
+                    '@svgr/webpack'
+                ]
+            },
+            {
+                test: /\.pdf$/,
+                use: [
+                    {
+                        loader: 'file-loader'
+                    }
+                ]
+            }
+        );
         return config;
     }
 };

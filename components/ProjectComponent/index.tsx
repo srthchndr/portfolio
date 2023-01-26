@@ -1,16 +1,16 @@
 import Image from 'next/image';
 
-import ProjectImage from '../../assets/Project_stock.jpg';
+import DefaultImage from '../../assets/default.png';
 import GithubIcon from '../../assets/github.svg';
 import {
     ProjectProps
 } from '../../types';
 
 export default function ProjectComponent({
-    imageURL, links, skills, summary, title
+    imageURL = null, links = null, skills, summary, title
 }: ProjectProps) {
     return (
-        <div className={'md:flex rounded-lg m-2 space-x-2 group hover:bg-neongreen-light dark:hover:bg-neongreen-dark'}>
+        <div className={'duration-500 md:flex rounded-lg m-2 space-x-2 group hover:bg-neongreen-light dark:hover:bg-neongreen-dark'}>
             <div className={'flex justify-center p-2 md:p-0'}>
                 {(
                     <Image
@@ -18,14 +18,14 @@ export default function ProjectComponent({
                         className={'m-2 rounded-lg aspect-[4/4] text-black-default'}
                         height={200}
                         sizes={'(max-width: 200px) 200px'}
-                        src={imageURL || ProjectImage}
+                        src={imageURL || DefaultImage}
                         width={200}
                     />
                 )}
             </div>
             <div className={'p-2 w-full space-y-4'}>
-                <h5 className={'dark:text-grey-primary cursor-pointer hover:underline'}>{title}</h5>
-                <p className={'text-xs text-black-secondary dark:text-grey-secondary'}>{summary}</p>
+                <h5 className={'duration-300 w-fit text-black-secondary dark:text-grey-primary cursor-pointer hover:underline group-hover:text-black-default group-hover:dark:text-white-default'}>{title}</h5>
+                <p className={'duration-300 text-xs text-black-secondary dark:text-grey-secondary group-hover:text-black-default group-hover:dark:text-white-default'}>{summary}</p>
                 <div className={'space-x-2 space-y-2'}>
                     {skills.map((skill) => (
                         <span
@@ -70,8 +70,3 @@ export default function ProjectComponent({
         </div>
     );
 }
-
-ProjectComponent.defaultProps = {
-    imageURL: null,
-    links: null
-};

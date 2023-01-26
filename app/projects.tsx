@@ -31,11 +31,11 @@ export default function ProjectsComponent() {
     return (
         <div
             className={'space-y-4 mb-10 p-5'}
+            id={'projects'}
         >
             {/* <CardWrapperComponent> */}
             <h2
                 className={'text-3xl text-left dark:text-grey-primary mb-10'}
-                id={'projects'}
             >My recent projects
             </h2>
             {projects.map((project: ProjectProps) => {
@@ -46,7 +46,7 @@ export default function ProjectsComponent() {
                 return (
                     <Project
                         id={id}
-                        imageURL={image ? urlFor(image).width(217).height(232).url() : null}
+                        imageURL={image ? urlFor(image).width(200).height(200).url() : null}
                         key={id}
                         links={links}
                         name={name}

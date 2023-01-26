@@ -1,0 +1,6 @@
+<svg width="16" height="16" viewBox="0 0 16 16" stroke='black' fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="cross">
+<line id="Line 1" x1="1.63602" y1="1.63604" x2="14.3639" y2="14.364" stroke="black" stroke-width="2" stroke-linecap="round"/>
+<line id="Line 2" x1="1.63605" y1="14.364" x2="14.364" y2="1.63604" stroke="black" stroke-width="2" stroke-linecap="round"/>
+</g>
+</svg>

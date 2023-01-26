@@ -1,0 +1,14 @@
+@media (prefers-color-scheme: light) {
+  g#phone, g#phone>path, #screen {
+    stroke: white;
+  }
+  #mail_outline {
+    fill: white;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  #mail_outline {
+    fill: black;
+  }
+}
