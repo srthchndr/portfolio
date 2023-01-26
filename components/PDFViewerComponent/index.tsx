@@ -19,10 +19,15 @@ export default function PDFViewerComponent() {
     const pdf = use(getPdfUrl());
 
     return (
-        <iframe
+        // <iframe
+        //     className={'w-full h-full md:w-[600px] md:h-[550px]'}
+        //     src={`${pdf.url}#toolbar=0&view=fitH`}
+        //     title={'Resume'}
+        // />
+        <embed
             className={'w-full h-full md:w-[600px] md:h-[550px]'}
             src={`${pdf.url}#toolbar=0&view=fitH`}
-            title={'Resume'}
+            type={'application/pdf'}
         />
     );
 }
