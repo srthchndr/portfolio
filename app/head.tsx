@@ -1,3 +1,5 @@
+import Script from 'next/script';
+
 export default function Head() {
     return (
         <>
@@ -104,16 +106,20 @@ export default function Head() {
                 content={'#da532c'}
                 name={'msapplication-TileColor'}
             />
-            <script
+            <Script
                 async
                 src={'https://www.googletagmanager.com/gtag/js?id=G-YHJRRCXD60'}
+                strategy={'afterInteractive'}
             />
-            <script id={'google-tag-script'}>{`window.dataLayer = window.dataLayer || [];
+            <Script
+                id={'google-tag-script'}
+                strategy={'afterInteractive'}
+            >{`window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
   gtag('config', 'G-YHJRRCXD60');`}
-            </script>
+            </Script>
         </>
     );
 }
