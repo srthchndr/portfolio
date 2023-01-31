@@ -35,8 +35,8 @@ export default function ProjectsComponent() {
         >
             {/* <CardWrapperComponent> */}
             <h2
-                className={'text-3xl text-left dark:text-grey-primary mb-10'}
-            >My recent projects
+                className={'text-3xl text-left dark:text-white-primary mb-10'}
+            >My Recent Projects
             </h2>
             {projects.map((project: ProjectProps) => {
                 const {
