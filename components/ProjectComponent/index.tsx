@@ -24,8 +24,8 @@ export default function ProjectComponent({
                 )}
             </div>
             <div className={'p-2 w-full space-y-4'}>
-                <h5 className={'duration-300 w-fit text-black-secondary dark:text-grey-primary cursor-pointer hover:underline group-hover:text-black-default group-hover:dark:text-white-default'}>{title}</h5>
-                <p className={'duration-300 text-xs text-black-secondary dark:text-grey-secondary group-hover:text-black-default group-hover:dark:text-white-default'}>{summary}</p>
+                <h5 className={'duration-300 w-fit text-black-secondary dark:text-white-default cursor-pointer hover:underline group-hover:text-black-default group-hover:dark:text-white-default font-semibold tracking-wider'}>{title}</h5>
+                <p className={'duration-300 text-xs text-black-secondary dark:text-white-secondary group-hover:text-black-default group-hover:dark:text-white-default'}>{summary}</p>
                 <div className={'space-x-2 space-y-2'}>
                     {skills.map((skill) => (
                         <span
