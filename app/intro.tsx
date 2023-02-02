@@ -7,7 +7,7 @@ export default function IntroComponent() {
         <div className={'flex flex-col-reverse md:flex-row md:h-screen justify-start h-full md:items-center p-5 md:mt-0'}>
             <div className={'w-full md:w-8/12 p-2'}>
                 <h1 className={'text-5xl dark:text-white-default text-black-default'}>Hi &#x1F590;, I am Sarath Madala</h1>
-                <p className={'dark:text-white-secondary text-black-secondary mt-4'}>Hi there! I am a fullstack web developer with experience in frontend and backend technologies such as <span className={'text-neongreen-default'}>React, Next JS, Node Js, Express</span>. I am interested in freelancing and am available for new projects. As a fullstack developer, I have a strong understanding of web development best practices and am skilled in delivering successful solutions from start to finish.</p>
+                <p className={'dark:text-white-secondary text-black-secondary mt-4'}>I am a fullstack web developer with experience in frontend and backend technologies such as <span className={'text-neongreen-default'}>React, Next JS, Node Js, Express</span>. I am interested in freelancing and am available for new projects. As a fullstack developer, I have a strong understanding of web development best practices and am skilled in delivering successful solutions from start to finish.</p>
                 {/* <div className={'hidden md:flex md:mt-4'}>
                     <ButtonComponent
                         className={'flex items-center'}
